@@ -1,8 +1,0 @@
-string a
-
-a=a.substr(0,n) : a를 0번 인덱스부터 n개까지로 재정의
-a.find("no")==-1 : a에 no가 없으면  -1
-a.insert(0,"bbq") : 0번인덱스에 bbq를 추가
-a.erase(0,n) : a의 0번인덱스부터 n개까지를 삭제
-
-char 은 함수에서 string으로 보낼때 const char로 보내야 함
