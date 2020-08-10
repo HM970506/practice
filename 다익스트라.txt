@@ -1,0 +1,52 @@
+다익스트라
+
+#include <iostream>
+using namespace std;
+
+int map[5][5] //입력된 맵 존재
+int result[5] = { 0 }; //전광판
+int via[5] = { 1 }; //한번 이동한 곳
+
+int findmin()
+{
+	int minn=99;
+	int minindex;
+
+	for (int x = 0; x < 5; x++)
+	{
+		if (via[x] == 0 && result[x] < minn && result[x]!=0) //전광판에서 최솟값 찾기(자기자신0값제외)
+		{
+			minn = result[x];
+			minindex = x;
+		}
+	}
+	return minindex; //해당 노드를 경유지로 선택)
+}
+
+int main()
+{
+	int n;
+	cin >> n;
+
+
+	int minindex;
+
+	for (int x = 1; x < 5; x++)
+	{
+			minindex = findmin();
+
+			for (int y = 0; y < 5; y++)
+			{
+				int a = map[minindex][y] + result[minindex];
+				int b = result[y];
+
+				if (a < b) result[y] = a; //경유지를 통해 이동VS직접 이동 값 비교
+			}
+
+			via[minindex] = 1; //간 길이라고 표시
+		
+	}
+
+
+	return 0;
+}

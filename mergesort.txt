@@ -1,0 +1,51 @@
+mergesort
+
+#include <iostream>
+#include <cstring>
+using namespace std;
+
+char input[21];
+char result[21];
+
+
+void merge(int start, int end)
+{
+	int mid = (start + end) / 2;
+
+	if (start == end) return;
+
+	merge(start, mid);
+	merge(mid + 1, end);
+
+	int a = start;
+	int b = mid+1;
+	int x = 0;
+
+	while (1)
+	{
+		if (a>mid && b>end)break;
+
+		if (a > mid) result[x++] = input[b++];
+		else if (b > end) result[x++] = input[a++];
+		else if (input[a] < input[b])	result[x++] = input[a++];
+		else if (input[a] >= input[b])	result[x++] = input[b++];
+
+	}
+
+	for (int z = 0; z < x; z++)
+	{
+		input[start + z] = result[z];
+	}
+
+}
+
+int main()
+{
+	cin >> input;
+	int n = strlen(input);
+	merge(0, n-1);
+
+	cout << input;
+
+	return 0;
+}

@@ -1,0 +1,43 @@
+#include <iostream>
+using namespace std;
+
+struct Node
+{
+	char ch;
+	Node* next[26];
+};
+
+Node* head;
+
+void init()
+{
+	head = new Node();
+	head->ch = '#';
+}
+
+void insert(string value)
+{
+	Node* now = head;
+	
+	for (int x = 0; x < value.length(); x++)
+	{
+		int k = value[x] - 'A';
+
+		if (now->next[k] == NULL)
+		{
+			now->next[k] = new Node();
+			now->next[k]->ch = value[x];
+		}
+
+		now = now->next[k];
+	}
+	
+}
+
+int main()
+{
+
+	
+
+	return 0;
+}

@@ -1,0 +1,40 @@
+#include <iostream>
+#include <cstring>
+using namespace std;
+
+struct Node
+{
+	Node* next1;
+	Node* next2;
+};
+
+int main()
+{
+	int map[5][5] = {
+		0,1,0,1,0,
+		0,0,1,0,0,
+		1,0,0,0,0,
+		0,0,1,0,0,
+		0,0,1,1,0 };
+
+	int cnt;
+	int max = -99;
+	int maxindex;
+	for (int x = 0; x < 5; x++)
+	{
+		cnt = 0;
+		for (int y = 0; y < 5; y++)
+		{
+			if(map[y][x]==1)cnt++;
+		}
+		if (cnt > max)
+		{
+			max = cnt;
+			maxindex = x;
+		}
+	}
+
+	cout << (char)(maxindex + 'A');
+
+	return 0;
+}

@@ -1,0 +1,126 @@
+테트리스
+
+#include <iostream>
+#include "헤더.h"
+#include <Windows.h>
+#include <ctime>
+using namespace std;
+
+void init()
+{
+	nowx = startx;
+	nowy = starty;
+
+	int ret = rand() % 5;
+
+	for (int y = 0; y < 4; y++)
+	{
+		for (int x = 0; x < 4; x++)
+		{
+			nowblock[y][x] = block[ret][y][x];
+		}
+	}
+}
+
+void spin()
+{
+	int afterblock[4][4] = { 0 };
+
+	for (int y = 0; y < 4; y++)
+	{
+		for (int x = 0; x < 4; x++)
+		{
+			afterblock[x][3 - y] = nowblock[y][x];
+		}
+	}
+
+	for (int y = 0; y < 4; y++)
+	{
+		for (int x = 0; x < 4; x++)
+		{
+			nowblock[y][x] = 0;
+		}
+	}
+
+	int minx = 999;
+	int miny = 999;
+	int maxx = -999;
+	int maxy = -999;
+
+	for (int y = 0; y < 4; y++)
+	{
+		for (int x = 0; x < 4; x++)
+		{
+			if (afterblock[y][x] == 1)
+			{
+				if (minx > x)minx = x;
+				if (miny > y)miny = y;
+				if (maxx < x)maxx = x;
+				if (maxy < y)maxy = y;
+			}
+		}
+	}
+
+	int a, b;
+
+	for (int y = miny, a=0; y <= maxy; y++, a++)
+	{
+		for (int x = minx, b=0; x <= maxx; x++, b++)
+		{
+			nowblock[a][b] = afterblock[y][x];
+		}
+	}
+
+}
+
+
+void prinAll()
+{
+	system("cls");
+
+	for (int y = 0; y < 10; y++)
+	{
+		for (int x = 0; x < 15; x++)
+		{
+			cout << map[y][x];
+		}
+		cout << endl;
+	}
+	
+}
+
+int main()
+{
+	while (1)
+	{
+		srand(time(NULL));
+		cout << rand() << endl;
+		if (GetAsyncKeyState(VK_UP) & 0x8001)
+		{
+			cout << "UP";
+		}
+		if (GetAsyncKeyState(VK_UP) & 0x8001)
+		{
+			cout << "DOWN";
+		}
+		if (GetAsyncKeyState(VK_UP) & 0x8001)
+		{
+			cout << "LEFT";
+		}
+		if (GetAsyncKeyState(VK_UP) & 0x8001)
+		{
+			cout << "RIGHT";
+		}
+		if (GetAsyncKeyState(VK_UP) & 0x8001)
+		{
+			cout << "SPIN";
+		}
+
+		prinAll();
+		Sleep(100);
+	}
+
+	return 0;
+}
+
+(헤더에 모양 입력)

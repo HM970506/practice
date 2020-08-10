@@ -1,0 +1,31 @@
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+struct Node
+{
+	struct name;
+	int age;
+
+	bool operator<(Node& t) //노드도 소트를 쓸 수 있도록 오버로드
+	{
+		return age < t.age;
+	}
+};
+
+bool compare(int a, int b)
+{
+	return a > b; //오름차순 소트를 내림차순으로 수정
+}
+
+int main()
+{
+	Node vect[3];
+	sort(vect, vect + 3); //오름차순 정렬 소트
+
+	int v2[4];
+	sort(v2, v2 + 4, compare);
+
+
+	return 0;
+}
