@@ -1,0 +1,5 @@
+﻿  MagicSquare.c
+  Main.c
+  코드를 생성하고 있습니다...
+C:\Users\HM\source\repos\Project3-2\Project3-2\Main.c(38,6): warning C4101: 'board' :참조되지 않은 지역 변수입니다.
+  Project3-2.vcxproj -> C:\Users\HM\source\repos\Project3-2\Debug\Project3-2.exe

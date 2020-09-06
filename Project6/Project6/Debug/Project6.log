@@ -1,0 +1,4 @@
+﻿  소스.cpp
+C:\Users\HM\source\repos\Project6\Project6\소스.cpp(15,17): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+C:\Users\HM\source\repos\Project6\Project6\소스.cpp(19,20): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+  Project6.vcxproj -> C:\Users\HM\source\repos\Project6\Debug\Project6.exe

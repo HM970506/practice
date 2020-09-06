@@ -1,0 +1,9 @@
+﻿  소스.cpp
+C:\Users\HM\source\repos\Project11\Project11\소스.cpp(12,20): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+C:\Users\HM\source\repos\Project11\Project11\소스.cpp(21,22): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+C:\Users\HM\source\repos\Project11\Project11\소스.cpp(28,15): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+C:\Users\HM\source\repos\Project11\Project11\소스.cpp(29,28): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+C:\Users\HM\source\repos\Project11\Project11\소스.cpp(49,23): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+C:\Users\HM\source\repos\Project11\Project11\소스.cpp(56,16): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+C:\Users\HM\source\repos\Project11\Project11\소스.cpp(57,29): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+  Project11.vcxproj -> C:\Users\HM\source\repos\Project11\Debug\Project11.exe
